@@ -1,0 +1,49 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Your List{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="static/css/styles.css">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Your List</h1>
+
+        {{wtf.quick_form(form, novalidate=True)}}
+
+      <hr>
+        <h3>You wanted to do</h3>
+        {% for do in to_do: %}
+          {% if do.did == 0:%}
+            <div class="form-check">
+            <a href="{{url_for('replace', todo_id = do.id)}}"><img src="/static/images/checkbox none.png"></a>
+            <label class="form-check-label">
+              <h4>{{do.to_do}} <a class="delete" href="{{url_for('delete', todo_id=do.id)}}"> ✘</a></h4>
+
+            </label>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+      <hr>
+
+        <h3> You have done</h3>
+        {% for do in to_do: %}
+          {% if do.did == 1:%}
+            <div class="form-check">
+            <a href="{{url_for('replace', todo_id = do.id)}}"><img src="/static/images/checkbox yes.png"></a>
+            <label class="form-check-label">
+              <h4>{{do.to_do}} <a class="delete" href="{{url_for('delete', todo_id=do.id)}}"> ✘</a></h4>
+
+            </label>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

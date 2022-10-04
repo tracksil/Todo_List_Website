@@ -1,0 +1,55 @@
+body {
+background-color: #333;
+color: white;
+}
+
+a {
+    color: #ffc107;
+}
+
+img{
+    margin: 0 0 5px 0;
+    width: 20px;
+}
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: #333;
+}
+
+.space-above {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.btn{
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.form-control{
+    display: inline-block;
+    width: 50%;
+}
+
+.delete{
+    margin-left: 5px;
+    display: inline_block;
+}
+
+#logout{
+    float: right;
+    display: inline_block;
+}
+
+#to_do{
+    width:100%;
+}
